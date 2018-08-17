@@ -1,0 +1,16 @@
+.slick-next::before,
+.slick-prev::before {
+    color: #000;
+}
+
+.slick-slide {
+    text-align: center;
+}
+
+/*.slick-slide.miweb-neos-slick-slide {
+    text-align: left;
+}*/
+
+.slick-slide img {
+    display: inline-block;
+}

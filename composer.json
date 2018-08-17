@@ -1,0 +1,17 @@
+{
+    "name": "miweb/neos-slick",
+    "type": "neos-plugin",
+    "description": "",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "MIWeb\\Neos\\Slick\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "MIWeb.Neos.Slick"
+        }
+    }
+}
