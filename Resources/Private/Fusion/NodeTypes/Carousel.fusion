@@ -1,14 +1,15 @@
 ##
 # "Carousel" element
 #
-prototype(MIWeb.Neos.Slick:Carousel) {
-    sectionName = 'plugin'
+prototype(MIWeb.Neos.Slick:Carousel) < prototype(Neos.Neos:ContentCollection) {
+    attributes.class = 'miweb-neos-slick-carousel'
+//    sectionName = 'plugin'
 
-    carouselItems = Neos.Neos:ContentCollection {
-        nodePath = 'carouselItems'
-        content.iterationName = 'carouselItemsIteration'
-        attributes.class = 'miweb-neos-slick-carousel-container'
-    }
+//    carouselItems = Neos.Neos:ContentCollection {
+//        nodePath = 'carouselItems'
+//        content.iterationName = 'carouselItemsIteration'
+//        attributes.class = 'miweb-neos-slick-carousel-container'
+//    }
 
 #    carouselItemArray = ${q(node).children('carouselItems').children('[instanceof Neos.NodeTypes:Image]')}
 
