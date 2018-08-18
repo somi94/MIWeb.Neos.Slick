@@ -26,7 +26,7 @@ ToDos:
           "repositories": [
             {
               "type": "vcs",
-              "url": "https://github.com/somi94/MIWeb.GridWall.git"
+              "url": "https://github.com/somi94/MIWeb.Neos.Slick.git"
             }
           ],
           "require": {
