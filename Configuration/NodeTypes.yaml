@@ -32,6 +32,23 @@
         * HTML
         * YouTube
         * References
+    inspector:
+      tabs:
+        dev:
+          label: 'Developer options'
+          position: 80
+          icon: 'icon-code'
+      groups:
+        slickSettings:
+          label: 'Carousel options'
+          position: 9
+        slickSecondary:
+          label: 'Carousel secondary options'
+          position: 10
+        slickDev:
+          label: 'Carousel developer settings'
+          position: 9
+          tab: dev
   constraints:
     nodeTypes:
       '*': FALSE
@@ -43,6 +60,287 @@
       'Neos.NodeTypes:ContentReferences': TRUE
       'Neos.Demo:YouTube': TRUE
       'MIWeb.Neos.Slick:Slide': TRUE
+
+  properties:
+    adaptiveHeight:
+      type: boolean
+      ui:
+        label: 'Adaptive height'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSettings'
+          position: 80
+    autoplay:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Autoplay'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSettings'
+          position: 10
+    autoplaySpeed:
+      type: integer
+      defaultValue: 3000
+      ui:
+        label: 'Autoplay speed (ms)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSecondary'
+          position: 20
+      validation:
+        numberRange:
+          minimum: 10
+          maximum: 999999
+    centerMode:
+      type: boolean
+      ui:
+        label: 'Center for partial prev/next slides'
+        help:
+          message: |
+            Enables centered view with partial prev/next slides.
+            Use with odd *# of slides to show*.
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSecondary'
+          position: 70
+    cssEase:
+      type: string
+      ui:
+        label: 'Animation (easing) style'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSettings'
+          position: 99
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default: ease-out'
+            allowEmpty: TRUE
+            values:
+              linear:
+                label: 'linear'
+              ease:
+                label: 'ease'
+              ease-in:
+                label: 'ease-in'
+              ease-in-out:
+                label: 'ease-in-out'
+              ease-out:
+                label: 'ease-out'
+    dots:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Show dot indicators'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSettings'
+          position: 10
+    draggable:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Enable mouse dragging'
+        inspector:
+          group: 'slickSecondary'
+          position: 70
+    fade:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Enable fade'
+        help:
+          message: |
+            Enable *fading* instead of *sliding* when transitioning to the next slide.
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSettings'
+          position: 10
+    arrows:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Show Prev/Next Arrows'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSettings'
+          position: 10
+    infinite:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Infinite loop sliding'
+        inspector:
+          group: 'slickSecondary'
+          position: 70
+    initialSlide:
+      type: integer
+      defaultValue: 0
+      ui:
+        label: 'Slide to start on'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSecondary'
+          position: 10
+      validation:
+        numberRange:
+          minimum: 0
+          maximum: 999
+    pauseOnHover:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Pause autoplay on hover'
+        inspector:
+          group: 'slickSecondary'
+          position: 20
+    pauseOnDotsHover:
+      type: boolean
+      ui:
+        label: 'Pause autoplay when a dot is hovered'
+        inspector:
+          group: 'slickSecondary'
+          position: 20
+    responsive:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        help:
+          message: |
+            Slick responsive settings.
+            Must be JavaScript array of objects, as described
+            in [Slick Carousel documentation](http://kenwheeler.github.io/slick/).
+        inspector:
+          group: 'slickDev'
+          editor: 'TYPO3.Neos/Inspector/Editors/CodeEditor'
+          editorOptions:
+            buttonLabel: 'Responsive settings'
+            highlightingMode: 'application/json'
+    rows:
+      type: integer
+      defaultValue: 1
+      ui:
+        label: 'Number of rows'
+        help:
+          message: |
+            Setting this to more than 1 initializes grid mode.
+            Use *Slides per row* setting to set how many slides should be in each row.
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSecondary'
+          position: 90
+      validation:
+        numberRange:
+          minimum: 1
+          maximum: 91
+    slidesPerRow:
+      type: integer
+      defaultValue: 1
+      ui:
+        label: 'Slides per row'
+        help:
+          message: |
+            When grid mode (*Number of rows* is > 1), this sets how many slides are in each grid row.
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSecondary'
+          position: 91
+      validation:
+        numberRange:
+          minimum: 1
+          maximum: 1000
+    slidesToShow:
+      type: integer
+      defaultValue: 1
+      ui:
+        label: '# of slides to show'
+        reloadIfChanged: TRUE
+        help:
+          message: |
+            Sets number of slides to show.
+            **Note**: Cannot be used with *Enable fade* option.
+        inspector:
+          group: 'slickSettings'
+          position: 90
+      validation:
+        numberRange:
+          minimum: 1
+          maximum: 99
+    slidesToScroll:
+      type: integer
+      defaultValue: 1
+      ui:
+        label: '# of slides to scroll'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSettings'
+          position: 91
+      validation:
+        numberRange:
+          minimum: 1
+          maximum: 99
+    speed:
+      type: integer
+      defaultValue: 300
+      ui:
+        label: 'Animation speed (ms)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSettings'
+          position: 99
+      validation:
+        numberRange:
+          minimum: 10
+          maximum: 999
+    variableWidth:
+      type: boolean
+      ui:
+        label: 'Variable width slides'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSecondary'
+          position: 60
+    vertical:
+      type: boolean
+      ui:
+        label: 'Vertical slide mode'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSecondary'
+          position: 60
+    rtl:
+      type: boolean
+      ui:
+        label: 'Right-to-left direction'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slickSecondary'
+          position: 89
+    #nextOnClick:
+      #type: boolean
+      #ui:
+        #label: 'Next slide on click'
+        #inspector:
+          #group: 'slickSecondary'
+          #position: 10
+    prevArrow:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        help:
+          message: Allows you to select a node or customize the HTML for the "Previous" arrow.
+        inspector:
+          group: 'slickDev'
+          position: 11
+    nextArrow:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        help:
+          message: Allows you to select a node or customize the HTML for the "Next" arrow.
+        inspector:
+          group: 'slickDev'
+          position: 12
 'MIWeb.Neos.Slick:Slide':
   abstract: false
   superTypes:
