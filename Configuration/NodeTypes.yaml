@@ -60,7 +60,6 @@
       'Neos.NodeTypes:ContentReferences': TRUE
       'Neos.Demo:YouTube': TRUE
       'MIWeb.Neos.Slick:Slide': TRUE
-
   properties:
     adaptiveHeight:
       type: boolean
