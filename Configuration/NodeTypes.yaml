@@ -327,7 +327,7 @@
       ui:
         reloadIfChanged: TRUE
         help:
-          message: Allows you to select a node or customize the HTML for the "Previous" arrow.
+          message: 'Allows you to select a node or customize the HTML for the "Previous" arrow.'
         inspector:
           group: 'slickDev'
           position: 11
@@ -336,7 +336,7 @@
       ui:
         reloadIfChanged: TRUE
         help:
-          message: Allows you to select a node or customize the HTML for the "Next" arrow.
+          message: 'Allows you to select a node or customize the HTML for the "Next" arrow.'
         inspector:
           group: 'slickDev'
           position: 12
