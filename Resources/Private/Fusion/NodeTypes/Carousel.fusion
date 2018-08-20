@@ -3,6 +3,37 @@
 #
 prototype(MIWeb.Neos.Slick:Carousel) < prototype(Neos.Neos:ContentCollection) {
     attributes.class = 'miweb-neos-slick-carousel'
+    
+    attributes.data-slick = Neos.Fusion:RawArray {
+        adaptiveHeight      = ${q(node).property('adaptiveHeight') ? true : false}
+        autoplay            = ${q(node).property('autoplay') ? true : false}
+        autoplaySpeed       = ${q(node).property('autoplaySpeed') ? q(node).property('autoplaySpeed') : 3000}
+		centerMode          = ${q(node).property('centerMode') ? true : false}
+		centerPadding       = ${q(node).property('centerPadding') ? q(node).property('centerPadding') : '50px'}
+		cssEase             = ${q(node).property('cssEase') ? q(node).property('cssEase') : 'ease'}
+		dots                = ${q(node).property('dots') ? true : false}
+		draggable           = ${q(node).property('draggable') ? true : false}
+		fade                = ${q(node).property('fade') ? true : false}
+		arrows              = ${q(node).property('arrows') ? true : false}
+		mobileFirst         = ${true}
+		infinite            = ${q(node).property('infinite') ? true : false}
+		initialSlide        = ${q(node).property('initialSlide') ? q(node).property('initialSlide') : 0}
+		pauseOnHover        = ${q(node).property('pauseOnHover') ? true : false}
+		pauseOnDotsHover    = ${q(node).property('pauseOnDotsHover') ? true : false}
+		responsive          = ${q(node).property('responsive') ? String.trim(q(node).property('responsive')) : null}
+		rows                = ${q(node).property('rows') ? q(node).property('rows') : 1}
+		slidesPerRow        = ${q(node).property('slidesPerRow') ? q(node).property('slidesPerRow') : 1}
+		slidesToShow        = ${q(node).property('slidesToShow') ? q(node).property('slidesToShow') : 1}
+		slidesToScroll      = ${q(node).property('slidesToScroll') ? q(node).property('slidesToScroll') : 1}
+		speed               = ${q(node).property('speed') ? q(node).property('speed') : 300}
+		variableWidth       = ${q(node).property('variableWidth') ? true : false}
+		vertical            = ${q(node).property('vertical') ? true : false}
+        rtl                 = ${q(node).property('rtl') ? true : false}
+        
+        prevArrow           = ${q(node).property('prevArrow') ? q(node).property('prevArrow') : '<button type="button" class="slick-prev">Previous</button>'}
+        nextArrow           = ${q(node).property('nextArrow') ? q(node).property('nextArrow') : '<button type="button" class="slick-next">Next</button>'}
+    }
+    attributes.data-slick.@process.toJson = ${Json.stringify(value)}
 //    sectionName = 'plugin'
 
 //    carouselItems = Neos.Neos:ContentCollection {
