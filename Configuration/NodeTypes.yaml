@@ -111,7 +111,7 @@
         inspector:
           group: 'slickSettings'
           position: 99
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Default: ease-out'
             allowEmpty: TRUE
@@ -145,7 +145,7 @@
           position: 70
     fade:
       type: boolean
-      defaultValue: TRUE
+      defaultValue: false
       ui:
         label: 'Enable fade'
         help:
@@ -211,7 +211,7 @@
             in [Slick Carousel documentation](http://kenwheeler.github.io/slick/).
         inspector:
           group: 'slickDev'
-          editor: 'TYPO3.Neos/Inspector/Editors/CodeEditor'
+          editor: 'Neos.Neos/Inspector/Editors/CodeEditor'
           editorOptions:
             buttonLabel: 'Responsive settings'
             highlightingMode: 'application/json'
