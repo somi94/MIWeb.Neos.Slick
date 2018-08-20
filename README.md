@@ -5,15 +5,14 @@ http://kenwheeler.github.io/slick/
 
 ## State of development
 This package is in early development and tested with Neos 4.0 only.
-It currently lacks configurable options.
 
 Features:
 * Slick carousel component
 * Slick slide component to group components in a single slide
 * Auto-Import of required scripts and styles
+* Inspector options: Configure slick slider in the Neos backend
 
 ToDos:
-* Inspector options: Configure slick slider in the Neos backend
 * Optional background images
 * Edit Mode (Turn off slider in backend mode)
 * Make Auto-Import of required scripts and styles optional
