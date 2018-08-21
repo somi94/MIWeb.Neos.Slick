@@ -2,22 +2,20 @@
 # "Carousel" element
 #
 prototype(MIWeb.Neos.Slick:Carousel) < prototype(Neos.Neos:ContentCollection) {
-    #TODO: try this instead of including dependencies on every page
-    #document = ${q(node).closest("[instanceof Neos.Neos:Document]")}
-    #document.head.stylesheets.slick = Neos.Fusion:Template {
-        #templatePath = 'resource://MIWeb.Neos.Slick/Private/Templates/NodeTypes/Carousel.html'
-        #sectionName = 'styles'
-        #node = ${node}
-        #@position = 'after site'
-        #@position = 999999
-    #}
-    #document.body.javascripts.slick = Neos.Fusion:Template {
-        #templatePath = 'resource://MIWeb.Neos.Slick/Private/Templates/NodeTypes/Carousel.html'
-        #sectionName = 'scripts'
-        #node = ${node}
-        #@position = 'after site'
-        #@position = 999999
-    #}
+//	document = ${q(node).closest("[instanceof Neos.Neos:Document]").get(0)}
+//	document.head.stylesheets.slick = Neos.Fusion:Template {
+//        templatePath = 'resource://MIWeb.Neos.Slick/Private/Templates/NodeTypes/Carousel.html'
+//        sectionName = 'styles'
+//        node = ${node}
+//        @position = 'after site'
+//        @position = 999999
+//    }
+//	document.body.javascripts.slick = Neos.Fusion:Template {
+//        templatePath = 'resource://MIWeb.Neos.Slick/Private/Templates/NodeTypes/Carousel.html'
+//        sectionName = 'scripts'
+//        node = ${node}
+//        @position = 999999
+//    }
 
     attributes.class = 'miweb-neos-slick-carousel'
     
