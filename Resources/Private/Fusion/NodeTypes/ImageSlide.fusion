@@ -1,13 +1,5 @@
 prototype(MIWeb.Neos.Slick:ImageSlide) {
 //    attributes.class = 'miweb-neos-slick-imageslide'
 
-    imageClassName = ${q(node).property('alignment') ? ('typo3-neos-alignment-' + q(node).property('alignment') + ' neos-alignment-' + q(node).property('alignment')) : ''}
     height = ${q(node).property('height') ? q(node).property('height') + 'px' : '300px'}
-
-    allowCropping = false
-    allowUpScaling = false
-
-    link.@process.convertUris = Neos.Neos:ConvertUris {
-        forceConversion = true
-    }
 }
