@@ -1,0 +1,17 @@
+.miweb-neos-slick-carousel {
+    border: 2px solid #080;
+}
+
+.miweb-neos-slick-carousel::before {
+    background-color: #0f0;
+    border-bottom: 2px solid #080;
+    color: #080;
+    content: "Slick Slide Editor";
+    display: block;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.miweb-neos-slick-carousel > div:not(:last-child) {
+    border-bottom: 2px solid #080;
+}
