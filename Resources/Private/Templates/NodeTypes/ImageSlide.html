@@ -4,5 +4,5 @@
     height: {height};
     background-image: url({f:if(condition: '{image}', then: '{media:uri.image(image: image)}', else: '{f:uri.resource(package: \'Neos.Neos\', path: \'Images/dummy-image.svg\')}')});
 ">
-    {neos:contentElement.editable(property: 'labelText', node: node, tag: 'span')}
+    {neos:contentElement.editable(property: 'text', node: node, tag: 'span')}
 </div>
