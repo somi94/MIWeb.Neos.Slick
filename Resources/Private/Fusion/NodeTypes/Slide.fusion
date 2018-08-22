@@ -1,4 +1,9 @@
 
 prototype(MIWeb.Neos.Slick:Slide) < prototype(Neos.Neos:ContentCollection) {
     attributes.class = 'miweb-neos-slick-slide'
+
+//    link.@process.convertUris = Neos.Neos:ConvertUris {
+//        forceConversion = true
+//    }
+//    attributes.style = ${'background-image: url(fail)'}
 }

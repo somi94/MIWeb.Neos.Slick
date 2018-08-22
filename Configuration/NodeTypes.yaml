@@ -60,6 +60,7 @@
       'Neos.NodeTypes:ContentReferences': TRUE
       'Neos.Demo:YouTube': TRUE
       'MIWeb.Neos.Slick:Slide': TRUE
+      'MIWeb.Neos.Slick:ImageSlide': TRUE
   properties:
     adaptiveHeight:
       type: boolean
@@ -351,8 +352,64 @@
     group: 'plugins'
     icon: 'icon-picture'
     inlineEditable: TRUE
+    inspector:
+      groups:
+        slide:
+          label: 'Slide options'
+          position: 9
+'MIWeb.Neos.Slick:ImageSlide':
+  abstract: false
+  superTypes:
+    'Neos.Neos:Content': TRUE
+  ui:
+    #label: i18n
+    label: 'Slick Image Slide'
+    group: 'plugins'
+    icon: 'icon-picture'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        slide:
+          label: 'Slide options'
+          position: 9
+  properties:
+    backgroundImage:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Background'
+        reloadIfChanged: true
+        inspector:
+          group: 'slide'
+          position: 50
+    height:
+      type: integer
+      defaultValue: 300
+      ui:
+        label: 'Height (px)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slide'
+          position: 60
+      validation:
+        numberRange:
+          minimum: 10
+          maximum: 999999
+#    labelActive:
+#      type: boolean
+#      ui:
+#        label: 'Display Label'
+#        reloadIfChanged: true
+#        inspector:
+#          group: 'slide'
+#          position: 80
+    labelText:
+      type: string
+      defaultValue: 'Your label here...'
+      ui:
+        inlineEditable: true
 'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
       'MIWeb.Neos.Slick:Slide': FALSE
+      'MIWeb.Neos.Slick:ImageSlide': FALSE
 
