@@ -2,4 +2,4 @@ Neos:
   Neos:
     fusion:
       autoInclude:
-        'MIWeb.Neos.Slick': TRUE
+        'MIWeb.Neos.Slick': true

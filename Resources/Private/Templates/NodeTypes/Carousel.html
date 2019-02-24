@@ -1,17 +1,17 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
 
-<f:section name="styles">
+<f:section name="Styles">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" type="text/css" href="resource://MIWeb.Neos.Slick/Public/Styles/slick-theme.css" />
 </f:section>
 
-<f:section name="editorStyles">
+<f:section name="StylesEditor">
     <link rel="stylesheet" type="text/css" href="resource://MIWeb.Neos.Slick/Public/Styles/slick-editor.css" />
 </f:section>
 
-<f:section name="scripts">
+<f:section name="Scripts">
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script type="text/javascript">
@@ -24,29 +24,3 @@
         });
     </script>
 </f:section>
-
-<f:comment><!--
-    <f:section name="plugin">
-        <div{attributes -> f:format.raw()}>
-            {carouselItems -> f:format.raw()}
-            <f:comment>
-            <div class="carousel slide" id="{node.identifier}">
-                <ol class="carousel-indicators">
-                    <f:for each="{carouselItemArray}" as="item" iteration="itemIterator">
-                        <li data-target="#{node.identifier}" data-slide-to="{itemIterator.index}" class="{f:if(condition: itemIterator.isFirst, then: 'active')}"></li>
-                    </f:for>
-                </ol>
-
-                {carouselItems -> f:format.raw()}
-
-                <a class="left carousel-control" href="#{node.identifier}" data-slide="prev">
-                    <span class="icon-prev"></span>
-                </a>
-                <a class="right carousel-control" href="#{node.identifier}" data-slide="next">
-                    <span class="icon-next"></span>
-                </a>
-            </div>
-            </f:comment>
-        </div>
-    </f:section>
---></f:comment>

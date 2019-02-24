@@ -1,0 +1,32 @@
+prototype(Neos.Neos:Page) {
+	@context.slickEnabled = ${q(node).find('[instanceof MIWeb.Neos.Slick:Carousel]').count() > 0}
+
+    head.stylesheets.slick = Neos.Fusion:Template {
+        templatePath = 'resource://MIWeb.Neos.Slick/Private/Templates/NodeTypes/Carousel.html'
+        sectionName = 'Styles'
+        node = ${node}
+
+		@if.slickEnabled = ${slickEnabled}
+        @position = 9
+    }
+
+    head.stylesheets.slickEditor = Neos.Fusion:Template {
+        templatePath = 'resource://MIWeb.Neos.Slick/Private/Templates/NodeTypes/Carousel.html'
+        sectionName = 'StylesEditor'
+        node = ${node}
+
+		@if.slickEnabled = ${slickEnabled}
+		@if.inBackend = ${node.context.inBackend}
+        @position = 9
+    }
+
+    body.javascripts.slick = Neos.Fusion:Template {
+        templatePath = 'resource://MIWeb.Neos.Slick/Private/Templates/NodeTypes/Carousel.html'
+        sectionName = 'Scripts'
+        node = ${node}
+
+		@if.slickEnabled = ${slickEnabled}
+		@if.inFrontend = ${!node.context.inBackend}
+        @position = 10
+    }
+}

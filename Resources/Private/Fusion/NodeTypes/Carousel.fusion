@@ -2,37 +2,6 @@
 # "Carousel" element
 #
 prototype(MIWeb.Neos.Slick:Carousel) < prototype(Neos.Neos:ContentCollection) {
-document = ${q(node).closest("[instanceof Neos.Neos:Document]").get(0)}
-	document.head.stylesheets.slick = Neos.Fusion:Template {
-        templatePath = 'resource://MIWeb.Neos.Slick/Private/Templates/NodeTypes/Carousel.html'
-        sectionName = 'styles'
-        node = ${node}
-        @position = 'after site'
-        @position = 999999
-    }
-
-
-    # editor styles
-    head.stylesheets.slickEditor = Neos.Fusion:Case {
-        if {
-            condition = ${node.context.inBackend}
-            renderer = Neos.Fusion:Template {
-                templatePath = 'resource://MIWeb.Neos.Slick/Private/Templates/NodeTypes/Carousel.html'
-                sectionName = 'editorStyles'
-                node = ${node}
-            }
-        }
-        @position = 'after site'
-        @position = 999999
-    }
-
-	document.body.javascripts.slick = Neos.Fusion:Template {
-        templatePath = 'resource://MIWeb.Neos.Slick/Private/Templates/NodeTypes/Carousel.html'
-        sectionName = 'scripts'
-        node = ${node}
-        @position = 999999
-    }
-
     attributes.class = 'miweb-neos-slick-carousel'
     
     attributes.data-slick = Neos.Fusion:RawArray {
