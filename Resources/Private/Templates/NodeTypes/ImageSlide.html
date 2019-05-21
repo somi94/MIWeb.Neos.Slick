@@ -1,8 +1,18 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
-<div class="miweb-neos-slick-imageslide" style="
-    height: {height};
-    background-image: url({f:if(condition: '{backgroundImage}', then: '{media:uri.image(image: backgroundImage)}', else: '{f:uri.resource(package: \'Neos.Neos\', path: \'Images/dummy-image.svg\')}')});
-">
-    {neos:contentElement.editable(property: 'text', node: node, tag: 'span')}
-</div>
+<f:if condition="{variableHeight}">
+    <f:then>
+        <a {attributes -> f:format.raw()}>
+            <media:image image="{backgroundImage}" alt="Background" width="" height="" />
+            {neos:contentElement.editable(property: 'text', node: node, tag: 'span')}
+        </a>
+    </f:then>
+    <f:else>
+        <a style="
+            height: {height};
+            background-image: url({f:if(condition: '{backgroundImage}', then: '{media:uri.image(image: backgroundImage)}', else: '{f:uri.resource(package: \'Neos.Neos\', path: \'Images/dummy-image.svg\')}')});
+        " {attributes -> f:format.raw()}>
+            {neos:contentElement.editable(property: 'text', node: node, tag: 'span')}
+        </a>
+    </f:else>
+</f:if>

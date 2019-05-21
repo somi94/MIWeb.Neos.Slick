@@ -1,5 +1,22 @@
 prototype(MIWeb.Neos.Slick:ImageSlide) {
-//    attributes.class = 'miweb-neos-slick-imageslide'
+    attributes.class = 'miweb-neos-slick-imageslide'
+
+    attributes.href = Neos.Fusion:Case {
+        target {
+            condition = ${q(node).property('target')}
+            renderer = Neos.Neos:NodeUri {
+                node = ${q(node).property('target')}
+            }
+        }
+    }
+
+    attributes.onclick = Neos.Fusion:Case {
+        backend {
+            condition = ${node.context.inBackend}
+            renderer = 'return false;'
+        }
+    }
 
     height = ${q(node).property('height') ? q(node).property('height') + 'px' : '300px'}
+    variableHeight = ${q(node).property('variableHeight') ? true : false}
 }

@@ -22,6 +22,11 @@
     position: relative;
 }
 
+.miweb-neos-slick-imageslide img {
+    max-width: 100%;
+    height: auto;
+}
+
 .miweb-neos-slick-imageslide span {
     background-color: rgba(0,0,0,.75);
     bottom: 0;

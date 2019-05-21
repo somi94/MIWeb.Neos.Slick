@@ -382,6 +382,14 @@
         inspector:
           group: 'slide'
           position: 50
+    variableHeight:
+      type: boolean
+      ui:
+        label: 'Variable height'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slide'
+          position: 55
     height:
       type: integer
       defaultValue: 300
@@ -395,6 +403,15 @@
         numberRange:
           minimum: 10
           maximum: 999999
+    target:
+      type: reference
+      ui:
+        label: 'Target'
+        inspector:
+          group: 'slide'
+          position: 70
+          editorOptions:
+            nodeTypes: ['Neos.Neos:Document']
 #    labelActive:
 #      type: boolean
 #      ui:
