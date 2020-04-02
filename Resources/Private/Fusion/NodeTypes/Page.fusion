@@ -1,4 +1,4 @@
-prototype(Neos.Neos:Page) {
+/*prototype(Neos.Neos:Page) {
 	@context.slickEnabled = ${q(node).find('[instanceof MIWeb.Neos.Slick:Carousel]').count() > 0}
 
     head.stylesheets.slick = Neos.Fusion:Template {
@@ -29,4 +29,4 @@ prototype(Neos.Neos:Page) {
 		@if.inFrontend = ${!node.context.inBackend}
         @position = 10
     }
-}
+}*/
